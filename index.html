@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shakthi Fernando | Full Stack Software Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/jpg" href="./assets/profile.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -53,75 +55,6 @@
             }
         }
     </script>
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-        .heading-font {
-            font-family: 'Montserrat', sans-serif;
-        }
-        body {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #2D3748 100%);
-            color: #F1F5F9;
-            overflow-x: hidden;
-        }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #4F46E5, #10B981, #F59E0B);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #4F46E5 0%, #10B981 50%, #F59E0B 100%);
-        }
-        .project-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-        .skill-bar {
-            height: 10px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-        }
-        .skill-progress {
-            height: 100%;
-            border-radius: 5px;
-            transition: width 1.5s ease-in-out;
-        }
-        .typewriter-text {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid #4F46E5;
-        }
-        .tech-tag {
-            background: rgba(79, 70, 229, 0.2);
-            border: 1px solid rgba(79, 70, 229, 0.4);
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #4F46E5, #10B981);
-            border-radius: 2px;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -660,87 +593,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // Back to top button
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible');
-                backToTopBtn.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopBtn.classList.remove('opacity-100', 'visible');
-                backToTopBtn.classList.add('opacity-0', 'invisible');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        const contactForm = document.querySelector('form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! I will get back to you soon.');
-                this.reset();
-            });
-        }
-
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all project cards and skill cards
-        document.querySelectorAll('.project-card, .glass-card').forEach((el, index) => {
-            el.style.animationDelay = `${index * 0.1}s`;
-            observer.observe(el);
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('button.md\\:hidden');
-        const navLinks = document.querySelector('.hidden.md\\:flex');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('flex');
-            navLinks.classList.toggle('flex-col');
-            navLinks.classList.toggle('absolute');
-            navLinks.classList.toggle('top-16');
-            navLinks.classList.toggle('left-0');
-            navLinks.classList.toggle('w-full');
-            navLinks.classList.toggle('bg-gray-900');
-            navLinks.classList.toggle('p-6');
-            navLinks.classList.toggle('space-y-4');
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
